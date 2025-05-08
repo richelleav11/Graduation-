@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 50px;
+            color: #FF69B4;
+        }
+        h3 {
+            margin-top 50 px;
+            color: black;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px;
+            color: black;
+            background-color: ;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .parallax {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text-overlay {
+            font-size: 6vw;
+            font-weight: bold;
+            text-transform: uppercase;
+            
+            color: white;
+            text-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: translateY(50px);
+            filter: blur(10px); /* Efek blur awal */
+            transition: opacity 1s ease-out, transform 1s ease-out, filter 1s ease-out;
+        }
+
+        .text-overlay.visible {
+            opacity: 10;
+            transform: translateY(0);
+            filter: blur(0px); /* Blur hilang saat muncul */
+        }
+
+        /* Gambar parallax */
+        .parallax-1 { background-image: url('40.jpg'); }
+    </style>
+</head>
+<body>
+
+    <div class="parallax parallax-1">
+        <div class="text-overlay">
+        <p>
+            graduation😌😌😌
+            
+        </p>
+<p id="demo"></p>
+<a href="https://www.instagram.com/my_alcides?igsh=Z2xqdmRzZzN5Mjc4"><img src="Instagram.png" alt="Instagram" width="24" height="24"></a>
+<h6>
+  <footer>Copyright &copy; 2025 ALCIDES IX, All right reserved</footer>
+  </h6>
+         <script>
+// Set the date we're counting down to
+var countDownDate = new Date("may 24, 2025 08:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();   
+  
+  
+   // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes =
+
+
+
+Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+        
+        
+    }
+}, 1000);
+</script>
+        </div>
+    </div>
+
+  
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const textElements = document.querySelectorAll(".text-overlay");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    } else {
+                        entry.target.classList.remove("visible");
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            textElements.forEach(text => observer.observe(text));
+        });
+    </script>
+
+</body>
+</html>
